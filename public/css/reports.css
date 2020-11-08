@@ -1,0 +1,9 @@
+
+#reports-create {
+    width: 500px;
+    height: 1000px;
+    position: relative;
+    left:50%;
+    transform: translateX(-50%);
+}
+

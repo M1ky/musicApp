@@ -1,0 +1,9 @@
+
+#track-create {
+    width: 90vw;
+    height: 1000px;
+    position: relative;
+    left:50%;
+    transform: translateX(-50%);
+}
+
