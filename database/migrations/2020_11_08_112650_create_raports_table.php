@@ -20,7 +20,7 @@ class CreateRaportsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('report_id');
             $table->unsignedBigInteger('track_id');
-            $table->bigInteger('broadcasts');
+            $table->bigInteger('broadcasts')->nullable();
             $table->timestamps();
 
             $table->foreign('track_id')->references('id')->on('tracks')->onDelete('cascade');
