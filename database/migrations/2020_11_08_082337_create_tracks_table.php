@@ -23,36 +23,6 @@ class CreateTracksTable extends Migration
             $table->bigInteger('time_seconds');
             $table->timestamps();
         });
-
-        \Illuminate\Support\Facades\DB::table('tracks')->insert(
-            array(
-                'id' => 1,
-                'title' => 'Track 1',
-                'isrc' => 'ISRC',
-                'composer_id' => 1,
-                'author_id' => 1,
-                'author_coverage_id' => 1,
-                'time_seconds' => 60
-            ),
-            array(
-                'id' => 2,
-                'title' => 'Track 2',
-                'isrc' => 'ISRC',
-                'composer_id' => 2,
-                'author_id' => 1,
-                'author_coverage_id' => 2,
-                'time_seconds' => 120
-            ),
-            array(
-                'id' => 3,
-                'title' => 'Track 3',
-                'isrc' => 'ISRC',
-                'composer_id' => 1,
-                'author_id' => 2,
-                'author_coverage_id' => 1,
-                'time_seconds' => 180
-            )
-        );
     }
 
     /**
