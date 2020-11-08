@@ -14,28 +14,9 @@ class ReportsController extends Controller
 {
     public function index()
     {
-        $reports = $this->getTracks();
-
         return view('reports.index', [
-            'reports' => $reports
+            'reports' => Report::latest('id')->get()
         ]);
-    }
-
-    private function getTracks()
-    {
-        $reports = Report::latest('id')->get();
-        foreach ($reports as $report)
-        {
-            $track_id = $report['track_id'];
-            $track = Track::find($track_id);
-            $author = Author::find($track['author_id']);
-
-            $report['track_id'] = $track['title'] . ', isrc: ' . $track['isrc'] . ', '
-                . $track['time_seconds'] . 'sec, author: '
-                . $author['first_name'] . ' ' . $author['last_name'];
-        }
-
-        return $reports;
     }
 
     public function create()
